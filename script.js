@@ -47,7 +47,7 @@ btn.addEventListener('click', async () => {
 
     try {
         // TROQUE PELA URL DO SEU RAILWAY QUANDO FIZER O DEPLOY
-        const response = await fetch('http://localhost:3000/verificar', {
+        const response = await fetch('https://securecard-7gs0.onrender.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dados)
