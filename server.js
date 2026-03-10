@@ -51,6 +51,12 @@ app.post('/verificar', async (req, res) => {
         });
     }
 });
+// Adicione isso para o servidor mostrar o seu index.html na raiz
+app.use(express.static(__dirname));
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Rodando na porta ${PORT}`));
