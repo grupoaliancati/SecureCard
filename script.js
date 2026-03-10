@@ -56,6 +56,15 @@ btn.addEventListener('click', async () => {
         const result = await response.json();
 
         if (response.ok) {
+            if (response.ok) {
+                msg.className = "alert alert-success mt-4 text-center";
+                msg.textContent = "Cartão verificado com sucesso!";
+
+                // Espera 2 segundos para o usuário ler a mensagem e redireciona
+                setTimeout(() => {
+                    window.location.href = "index.html"; // Nome do seu arquivo inicial
+                }, 2000);
+            }
             msg.className = "alert alert-success mt-4 text-center";
             msg.textContent = "Cartão verificado com sucesso!";
         } else {
